@@ -1,0 +1,4 @@
+__pycache__
+*.hdf5
+gru_tokenizer.pkl
+test.ipynb
