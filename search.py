@@ -61,24 +61,27 @@ def generate_explainer_html(n_clicks, n_submit, source, text):
                                                                         'whiteSpace': 'normal',
                                                                         'height': 'auto',
                                                                         'lineHeight': '15px',
-                                                                        'textAlign': 'left'
+                                                                        'textAlign': 'left',
+                                                                        'padding': '7px'
                                                                     },
-                                                        style_data_conditional=[
-                                                            {
-                                                                'if': {'column_id': 'TITLE'}, 
-                                                                    'min_width':'200px'
-                                                             },
-                                                             {
-                                                                'if': {'column_id':'AUTHOR'},
-                                                                    'min_width':'80px'
-                                                             },
-                                                             {
-                                                                'if': {'column_id':'SCHOOL'},
-                                                                    'min_width':'80px'
-                                                             }
-                                                        ],
+                                                        
+                                                        # style_data_conditional=[
+                                                        #     {
+                                                        #         'if': {'column_id': 'TITLE'}, 
+                                                        #             'min_width':'200px'
+                                                        #      },
+                                                        #      {
+                                                        #         'if': {'column_id':'AUTHOR'},
+                                                        #             'min_width':'80px'
+                                                        #      },
+                                                        #      {
+                                                        #         'if': {'column_id':'SCHOOL'},
+                                                        #             'min_width':'80px'
+                                                        #      }
+                                                        # ],
                                                         data=results.to_dict('records'),
                                                         columns=[{"name": i, "id": i} for i in df.columns],
+                                                        style_as_list_view=True,
                                                     )
                 
                 if len(results) < 20:
