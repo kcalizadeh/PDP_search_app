@@ -33,7 +33,6 @@ searchbar = html.Div(id="search-bar-container", children=
 
 # overall layout
 app.layout = html.Div([
-    html.H1('hello'),
     searchbar,
     html.Div(id="output", children=[])
 ])
