@@ -54,7 +54,7 @@ def generate_explainer_html(n_clicks, n_submit, source, text):
                 if len(results) == 0:
                     return 'That word was not found in the selected source.'
                 if len(results) > 20:
-                    results = results.sample(20)
+                    # results = results.sample(20)
                     to_present = dash_table.DataTable(
                                                         id='table',
                                                         style_cell={
@@ -62,37 +62,61 @@ def generate_explainer_html(n_clicks, n_submit, source, text):
                                                                         'height': 'auto',
                                                                         'lineHeight': '15px',
                                                                         'textAlign': 'left',
-                                                                        'padding': '7px'
+                                                                        'padding': '5px'
                                                                     },
                                                         
-                                                        # style_data_conditional=[
-                                                        #     {
-                                                        #         'if': {'column_id': 'TITLE'}, 
-                                                        #             'min_width':'200px'
-                                                        #      },
-                                                        #      {
-                                                        #         'if': {'column_id':'AUTHOR'},
-                                                        #             'min_width':'80px'
-                                                        #      },
-                                                        #      {
-                                                        #         'if': {'column_id':'SCHOOL'},
-                                                        #             'min_width':'80px'
-                                                        #      }
-                                                        # ],
+                                                        style_data_conditional=[
+                                                            {
+                                                                'if': {'column_id': 'TITLE'}, 
+                                                                    'min_width':'200px'
+                                                             },
+                                                             {
+                                                                'if': {'column_id':'AUTHOR'},
+                                                                    'min_width':'80px'
+                                                             },
+                                                             {
+                                                                'if': {'column_id':'SCHOOL'},
+                                                                    'min_width':'80px'
+                                                             }
+                                                        ],
                                                         data=results.to_dict('records'),
                                                         columns=[{"name": i, "id": i} for i in df.columns],
-                                                        style_as_list_view=True,
+                                                        page_action='native',
+                                                        page_current= 0,
+                                                        page_size= 15,
                                                     )
                 
                 if len(results) < 20:
                     to_present = dash_table.DataTable(
                                                         id='table',
-                                                        columns=[{"name": i, "id": i} for i in df.columns],
+                                                        style_cell={
+                                                                        'whiteSpace': 'normal',
+                                                                        'height': 'auto',
+                                                                        'lineHeight': '15px',
+                                                                        'textAlign': 'left',
+                                                                        'padding': '5px'
+                                                                    },
+                                                        
+                                                        style_data_conditional=[
+                                                            {
+                                                                'if': {'column_id': 'TITLE'}, 
+                                                                    'min_width':'200px'
+                                                             },
+                                                             {
+                                                                'if': {'column_id':'AUTHOR'},
+                                                                    'min_width':'80px'
+                                                             },
+                                                             {
+                                                                'if': {'column_id':'SCHOOL'},
+                                                                    'min_width':'80px'
+                                                             }
+                                                        ],
                                                         data=results.to_dict('records'),
+                                                        columns=[{"name": i, "id": i} for i in df.columns],
                                                     )
 
                 
-                return to_present
+                return [html.Br(), to_present]
         # except:
         #     return 'Sorry, something went wrong.'
 
