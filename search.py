@@ -19,20 +19,21 @@ searchbar = html.Div(id="search-bar-container", children=
     [dbc.Row([
         dbc.Col(dcc.Dropdown(id="source-selection", 
                                   options=get_dropdown_list_search(),
-                                  style={'width': '90%'},
-                                  placeholder='Start typing to search...'), width=3),
+                                  style={'width': '95%'},
+                                  placeholder='Start typing to search...'), width=4),
         dbc.Col(dbc.Input(id="text-search-bar", 
                     placeholder="enter a word or phrase to search",
                     type='text',
                     n_submit=0,
                     autoFocus=True,
-                    style={'width': '100%'}), width=4),
+                    style={'width': '90%'}), width=5),
         dbc.Col(dbc.Button("SUBMIT", id="submit-button", color="primary", className="mr-1", n_clicks=0), width=1.8)
     ])
 ])
 
 # overall layout
 app.layout = html.Div([
+    html.Br(),
     searchbar,
     html.Div(id="output", children=[])
 ])
