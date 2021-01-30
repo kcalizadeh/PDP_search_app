@@ -53,7 +53,7 @@ def generate_explainer_html(n_clicks, n_submit, source, text):
                 results = df[df['SENTENCE'].str.contains('(?i)\s'+text+'\s')].copy()
                 results = results.sample(len(results))
             if len(results) == 0:
-                return 'That word was not found in the selected source.'
+                return 'Sorry, that word was not found in the selected source.'
             else:
                 try:
                     to_present = dash_table.DataTable(
