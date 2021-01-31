@@ -35,7 +35,7 @@ def get_dropdown_list_search():
  {'label': 'Ethics', 'value': 'Ethics'},
  {'label': 'Fichte', 'value': 'Fichte'},
  {'label': 'Foucault', 'value': 'Foucault'},
- {'label': 'German Idealism', 'value': 'German_Idealism'},
+ {'label': 'German Idealism', 'value': 'German Idealism'},
  {'label': 'Hegel', 'value': 'Hegel'},
  {'label': 'Heidegger', 'value': 'Heidegger'},
  {'label': 'Hume', 'value': 'Hume'},
