@@ -38,13 +38,12 @@ app.layout = html.Div([
     html.Div(id="output", children=[])
 ])
 
-# callback for twitter search bar
 @app.callback(Output(component_id="output", component_property="children"),
               [Input(component_id="submit-button", component_property="n_clicks"),
               Input(component_id="text-search-bar", component_property="n_submit"),
               Input(component_id="source-selection", component_property="value")],
               [State(component_id="text-search-bar", component_property="value")])
-def generate_explainer_html(n_clicks, n_submit, source, text): 
+def search_df(n_clicks, n_submit, source, text): 
     if n_clicks < 1 and n_submit < 1:
         return [html.Br(), html.P('Search results will appear here.')]
     if n_clicks > 0 or n_submit > 0:
