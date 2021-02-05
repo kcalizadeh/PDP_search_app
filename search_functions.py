@@ -30,7 +30,7 @@ def get_dropdown_list_search():
  {'label': 'Discourse On Method', 'value': 'Discourse On Method'},
  {'label': 'Elements Of The Philosophy Of Right',
   'value': 'Elements Of The Philosophy Of Right'},
- {'label': 'Empiricism', 'value': 'Empiricism'},
+ {'label': 'Empiricism', 'value': 'empiricism'},
  {'label': 'Essay Concerning Human Understanding',
   'value': 'Essay Concerning Human Understanding'},
  {'label': 'Essential Works Of Lenin', 'value': 'Essential Works Of Lenin'},
