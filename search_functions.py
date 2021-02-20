@@ -1,6 +1,5 @@
 def get_dropdown_list_search():
-    dropdown_list = [
-      {'label': 'A General Theory Of Employment, Interest, And Money',
+    dropdown_list = [{'label': 'A General Theory Of Employment, Interest, And Money',
   'value': 'A General Theory Of Employment, Interest, And Money'},
  {'label': 'A Treatise Concerning The Principles Of Human Knowledge',
   'value': 'A Treatise Concerning The Principles Of Human Knowledge'},
@@ -54,8 +53,11 @@ def get_dropdown_list_search():
  {'label': 'Locke', 'value': 'Locke'},
  {'label': 'Madness And Civilization', 'value': 'Madness And Civilization'},
  {'label': 'Malebranche', 'value': 'Malebranche'},
+ {'label': 'Marcus Aurelius', 'value': 'Marcus Aurelius'},
  {'label': 'Marx', 'value': 'Marx'},
  {'label': 'Meditations', 'value': 'Meditations'},
+ {'label': 'Meditations On First Philosophy',
+  'value': 'Meditations On First Philosophy'},
  {'label': 'Merleau-Ponty', 'value': 'Merleau-Ponty'},
  {'label': 'Moore', 'value': 'Moore'},
  {'label': 'Naming And Necessity', 'value': 'Naming And Necessity'},
@@ -106,6 +108,5 @@ def get_dropdown_list_search():
  {'label': 'Tractatus Logico-Philosophicus',
   'value': 'Tractatus Logico-Philosophicus'},
  {'label': 'Wittgenstein', 'value': 'Wittgenstein'},
- {'label': 'Writing And Difference', 'value': 'Writing And Difference'}
- ]
+ {'label': 'Writing And Difference', 'value': 'Writing And Difference'}]
     return dropdown_list
