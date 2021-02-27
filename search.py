@@ -51,7 +51,7 @@ def search_df(n_clicks, n_submit, source, text):
                 with open(f'slice_pickles/{source}_slice.pkl', 'rb') as df_pkl:
                     df = pickle.load(df_pkl)
                     results = df[df['SENTENCE'].str.contains('(?i)\s'+text+'\s')].copy()
-                    results = results.sample(len(results))
+                    # results = results.sample(len(results))
                 if len(results) == 0:
                     return 'Sorry, that word was not found in the selected source.'
                 else:

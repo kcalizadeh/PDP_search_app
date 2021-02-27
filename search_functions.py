@@ -62,6 +62,7 @@ def get_dropdown_list_search():
  {'label': 'Moore', 'value': 'Moore'},
  {'label': 'Naming And Necessity', 'value': 'Naming And Necessity'},
  {'label': 'Off The Beaten Track', 'value': 'Off The Beaten Track'},
+ {'label': 'On Certainty', 'value': 'On Certainty'},
  {'label': 'On The Improvement Of Understanding',
   'value': 'On The Improvement Of Understanding'},
  {'label': 'On The Principles Of Political Economy And Taxation',
