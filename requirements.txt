@@ -9,3 +9,5 @@ pandas
 pickleshare==0.7.5
 plotly==4.1.1
 psycopg2-binary
+os
+
