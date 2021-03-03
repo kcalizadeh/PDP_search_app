@@ -17,6 +17,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 classifier_dict = {'Plato': 'SCHOOL', 'Aristotle': 'SCHOOL', 'Locke': 'AUTHOR', 'Hume': 'AUTHOR', 'Berkeley': 'AUTHOR', 'Spinoza': 'AUTHOR', 'Leibniz': 'AUTHOR', 'Descartes': 'AUTHOR', 'Malebranche': 'AUTHOR', 'Russell': 'AUTHOR', 'Moore': 'AUTHOR', 'Wittgenstein': 'AUTHOR', 'Lewis': 'AUTHOR', 'Quine': 'AUTHOR', 'Popper': 'AUTHOR', 'Kripke': 'AUTHOR', 'Foucault': 'AUTHOR', 'Derrida': 'AUTHOR', 'Deleuze': 'AUTHOR', 'Merleau-Ponty': 'AUTHOR', 'Husserl': 'AUTHOR', 'Heidegger': 'AUTHOR', 'Kant': 'AUTHOR', 'Fichte': 'AUTHOR', 'Hegel': 'AUTHOR', 'Marx': 'AUTHOR', 'Lenin': 'AUTHOR', 'Smith': 'AUTHOR', 'Ricardo': 'AUTHOR', 'Keynes': 'AUTHOR', 'Epictetus': 'AUTHOR', 'Marcus Aurelius': 'AUTHOR', 'Plato - Complete Works': 'TITLE', 'Aristotle - Complete Works': 'TITLE', 'Second Treatise On Government': 'TITLE', 'Essay Concerning Human Understanding': 'TITLE', 'A Treatise Of Human Nature': 'TITLE', 'Dialogues Concerning Natural Religion': 'TITLE', 'Three Dialogues': 'TITLE', 'A Treatise Concerning The Principles Of Human Knowledge': 'TITLE', 'Ethics': 'TITLE', 'On The Improvement Of Understanding': 'TITLE', 'Theodicy': 'TITLE', 'Discourse On Method': 'TITLE', 'Meditations On First Philosophy': 'TITLE', 'The Search After Truth': 'TITLE', 'The Analysis Of Mind': 'TITLE', 'The Problems Of Philosophy': 'TITLE', 'Philosophical Studies': 'TITLE', 'Philosophical Investigations': 'TITLE', 'Tractatus Logico-Philosophicus': 'TITLE', 'Lewis - Papers': 'TITLE', 'Quintessence': 'TITLE', 'The Logic Of Scientific Discovery': 'TITLE', 'Naming And Necessity': 'TITLE', 'Philosophical Troubles': 'TITLE', 'On Certainty': 'TITLE', 'The Birth Of The Clinic': 'TITLE', 'Madness And Civilization': 'TITLE', 'The Order Of Things': 'TITLE', 'Writing And Difference': 'TITLE', 'Difference And Repetition': 'TITLE', 'Anti-Oedipus': 'TITLE', 'The Phenomenology Of Perception': 'TITLE', 'The Crisis Of The European Sciences And Phenomenology': 'TITLE', 'The Idea Of Phenomenology': 'TITLE', 'Being And Time': 'TITLE', 'Off The Beaten Track': 'TITLE', 'Critique Of Practical Reason': 'TITLE', 'Critique Of Judgement': 'TITLE', 'Critique Of Pure Reason': 'TITLE', 'The System Of Ethics': 'TITLE', 'Science Of Logic': 'TITLE', 'The Phenomenology Of Spirit': 'TITLE', 'Elements Of The Philosophy Of Right': 'TITLE', 'Capital': 'TITLE', 'The Communist Manifesto': 'TITLE', 'Essential Works Of Lenin': 'TITLE', 'The Wealth Of Nations': 'TITLE', 'On The Principles Of Political Economy And Taxation': 'TITLE', 'A General Theory Of Employment, Interest, And Money': 'TITLE', 'Enchiridion': 'TITLE', 'Meditations': 'TITLE', 'Empiricism': 'SCHOOL', 'Rationalism': 'SCHOOL', 'Analytic': 'SCHOOL', 'Continental': 'SCHOOL', 'Phenomenology': 'SCHOOL', 'German Idealism': 'SCHOOL', 'Communism': 'SCHOOL', 'Capitalism': 'SCHOOL', 'Stoicism': 'SCHOOL'}
 
+# DATABASE_URL = os.environ['DATABASE_URL']
+
 
 # search bar
 searchbar = html.Div(id="search-bar-container", children=
@@ -50,11 +52,14 @@ app.layout = html.Div([
 def search_df(n_clicks, n_submit, source, text):
     if source: 
         if n_clicks < 1 and n_submit < 1:
-            return [html.Br(), html.P('Search results will appear here.')]
+            return [html.Br(), html.P(f'Search results will appear here.')]
         if n_clicks > 0 or n_submit > 0:
             # read database connection url from the enivron variable we just set.
-            DATABASE_URL = os.environ.get('DATABASE_URL')
             con = None
+            DATABASE_URL = os.environ.get('HEROKU_POSTGRESQL_BROWN_URL')
+            print(DATABASE_URL)
+
+            return html.P(DATABASE_URL)
             try:
                 # create a new database connection by calling the connect() function
                 con = psycopg2.connect(DATABASE_URL)
@@ -66,7 +71,7 @@ def search_df(n_clicks, n_submit, source, text):
 
                 query = f"""SELECT * 
                             FROM phil_nlp 
-                            WHERE {source_type} = '{source}' AND sentence_str LIKE '% {text} %'
+                            WHERE "{source_type.upper()}" = '{source}' AND "SENTENCE" LIKE '% {text} %'
                                 """
                 # cur.execute(query)
                 # execute an SQL statement to get the HerokuPostgres database version
