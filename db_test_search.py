@@ -57,7 +57,7 @@ def search_df(n_clicks, n_submit, source, text):
             con = None
             try:
                 # create a new database connection by calling the connect() function
-                con = psycopg2.connect('postgres://guuiiqorzqffsr:92fad54a2f30bcb9ac9f256c7faba9d6f7d8143d709b738e4b8517cce5cdf1a3@ec2-3-223-72-172.compute-1.amazonaws.com:5432/d6edlr9j0drft9')
+                con = psycopg2.connect(DATABASE_URL)
 
                 #  create a new cursor author = '{source}'
                 cur = con.cursor()
