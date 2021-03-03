@@ -50,16 +50,16 @@ app.layout = html.Div([
               Input(component_id="source-selection", component_property="value")],
               [State(component_id="text-search-bar", component_property="value")])
 def search_df(n_clicks, n_submit, source, text):
-    if source: 
+    # if source: 
         if n_clicks < 1 and n_submit < 1:
             return [html.Br(), html.P(f'Search results will appear here.')]
         if n_clicks > 0 or n_submit > 0:
             # read database connection url from the enivron variable we just set.
             con = None
             DATABASE_URL = os.environ.get('HEROKU_POSTGRESQL_BROWN_URL')
-            print(DATABASE_URL)
+            # print(DATABASE_URL)
 
-            return html.P(DATABASE_URL)
+            # return html.P(DATABASE_URL)
             try:
                 # create a new database connection by calling the connect() function
                 con = psycopg2.connect(DATABASE_URL)
