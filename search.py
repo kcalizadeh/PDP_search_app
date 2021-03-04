@@ -57,9 +57,7 @@ def search_df(n_clicks, n_submit, source, text):
             # read database connection url from the enivron variable we just set.
             con = None
             DATABASE_URL = os.environ.get('HEROKU_POSTGRESQL_BROWN_URL')
-            # print(DATABASE_URL)
 
-            # return html.P(DATABASE_URL)
             try:
                 # create a new database connection by calling the connect() function
                 con = psycopg2.connect(DATABASE_URL)
@@ -73,16 +71,9 @@ def search_df(n_clicks, n_submit, source, text):
                             FROM phil_nlp 
                             WHERE "{source_type.upper()}" = '{source}' AND "SENTENCE" LIKE '% {text} %'
                                 """
-                # cur.execute(query)
-                # execute an SQL statement to get the HerokuPostgres database version
-                # cur.execute('SELECT version()')
-
-                # # display the PostgreSQL database server version
-                # db_version = cur.fetchone()
-                # # return(db_version)
-                # cur.execute(query)
-                # # cur.fetchall()
+                
                 results = pd.read_sql(query, con)
+
                 to_present = dash_table.DataTable(
                                                         id='table',
                                                         style_cell={
@@ -126,51 +117,6 @@ def search_df(n_clicks, n_submit, source, text):
                 # close the communication with the database server by calling the close()
                 if con is not None:
                     con.close()
-                    print('Database connection closed.')
-
-                # with open(f'slice_pickles/{source}_slice.pkl', 'rb') as df_pkl:
-                #     df = pickle.load(df_pkl)
-                #     results = df[df['SENTENCE'].str.contains('(?i)\s'+text+'\s')].copy()
-                #     # results = results.sample(len(results))
-                # if len(results) == 0:
-                #     return 'Sorry, that word was not found in the selected source.'
-                # else:
-                #     try:
-                #         to_present = dash_table.DataTable(
-                #                                         id='table',
-                #                                         style_cell={
-                #                                                         'whiteSpace': 'normal',
-                #                                                         'height': 'auto',
-                #                                                         'lineHeight': '15px',
-                #                                                         'textAlign': 'left',
-                #                                                         'padding': '5px'
-                #                                                     },
-                                                        
-                #                                         style_data_conditional=[
-                #                                             {
-                #                                                 'if': {'column_id': 'TITLE'}, 
-                #                                                     'min_width':'200px'
-                #                                                 },
-                #                                                 {
-                #                                                 'if': {'column_id':'AUTHOR'},
-                #                                                     'min_width':'80px'
-                #                                                 },
-                #                                                 {
-                #                                                 'if': {'column_id':'SCHOOL'},
-                #                                                     'min_width':'80px'
-                #                                                 }
-                #                                         ],
-                #                                         data=results.to_dict('records'),
-                #                                         columns=[{"name": i, "id": i} for i in df.columns],
-                #                                         page_action='native',
-                #                                         page_current= 0,
-                #                                         page_size= 15,
-                #                                     )
-                
-                    
-                        # return [html.Br(), html.P(f'Showing {len(results)} results for "{text}" in {source}.'), to_present]
-                    # except:
-                    #     return 'Sorry, something went wrong.'
 
 
 
