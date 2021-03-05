@@ -6,7 +6,6 @@ dash-renderer==1.8.3
 dash-table==4.11.1
 gunicorn==20.0.4
 pandas 
-pickleshare==0.7.5
 plotly==4.1.1
 psycopg2-binary
 
