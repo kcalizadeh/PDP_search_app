@@ -217,4 +217,4 @@ def get_classifier_dict():
  'Communism': 'school',
  'Capitalism': 'school',
  'Stoicism': 'school'}
- return classifier_dict
+  return classifier_dict
