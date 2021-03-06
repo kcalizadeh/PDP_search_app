@@ -14,7 +14,7 @@ external_stylesheets = [dbc.themes.CERULEAN]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-classifier_dict = get_classifier_dict
+classifier_dict = get_classifier_dict()
 
 
 
@@ -59,7 +59,7 @@ def search_df(n_clicks, n_submit, source, text):
                 # create a new database connection by calling the connect() function
                 con = psycopg2.connect(DATABASE_URL)
                 
-                source_type = classifier_dict[source].title()
+                source_type = classifier_dict[source]
 
                 query = f"""SELECT * 
                             FROM phil_nlp 
