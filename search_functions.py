@@ -38,6 +38,7 @@ def get_dropdown_list_search():
   'value': 'Essay Concerning Human Understanding'},
  {'label': 'Essential Works Of Lenin', 'value': 'Essential Works Of Lenin'},
  {'label': 'Ethics', 'value': 'Ethics'},
+ {'label': 'Feminism', 'value': 'Feminism'},
  {'label': 'Fichte', 'value': 'Fichte'},
  {'label': 'Foucault', 'value': 'Foucault'},
  {'label': 'German Idealism', 'value': 'German Idealism'},
@@ -57,6 +58,7 @@ def get_dropdown_list_search():
  {'label': 'Malebranche', 'value': 'Malebranche'},
  {'label': 'Marcus Aurelius', 'value': 'Marcus Aurelius'},
  {'label': 'Marx', 'value': 'Marx'},
+ {'label': 'Mary Wollstonecraft', 'value': 'Mary Wollstonecraft'},
  {'label': 'Meditations', 'value': 'Meditations'},
  {'label': 'Meditations On First Philosophy',
   'value': 'Meditations On First Philosophy'},
@@ -114,6 +116,8 @@ def get_dropdown_list_search():
  {'label': 'Tractatus Logico-Philosophicus',
   'value': 'Tractatus Logico-Philosophicus'},
  {'label': 'Twilight Of The Idols', 'value': 'Twilight Of The Idols'},
+ {'label': 'Vindication Of The Rights Of Woman',
+  'value': 'Vindication Of The Rights Of Woman'},
  {'label': 'Wittgenstein', 'value': 'Wittgenstein'},
  {'label': 'Writing And Difference', 'value': 'Writing And Difference'}]
     return dropdown_list
@@ -152,6 +156,7 @@ def get_classifier_dict():
  'Epictetus': 'AUTHOR',
  'Marcus Aurelius': 'AUTHOR',
  'Nietzsche': 'SCHOOL',
+ 'Mary Wollstonecraft': 'AUTHOR',
  'Plato - Complete Works': 'TITLE',
  'Aristotle - Complete Works': 'TITLE',
  'Second Treatise On Government': 'TITLE',
@@ -208,6 +213,7 @@ def get_classifier_dict():
  'Ecce Homo': 'TITLE',
  'Twilight Of The Idols': 'TITLE',
  'Thus Spake Zarathustra': 'TITLE',
+ 'Vindication Of The Rights Of Woman': 'TITLE',
  'Empiricism': 'SCHOOL',
  'Rationalism': 'SCHOOL',
  'Analytic': 'SCHOOL',
@@ -216,5 +222,6 @@ def get_classifier_dict():
  'German Idealism': 'SCHOOL',
  'Communism': 'SCHOOL',
  'Capitalism': 'SCHOOL',
- 'Stoicism': 'SCHOOL'}
+ 'Stoicism': 'SCHOOL',
+ 'Feminism': 'SCHOOL'}
   return classifier_dict
