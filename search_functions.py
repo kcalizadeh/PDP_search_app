@@ -22,6 +22,7 @@ def get_dropdown_list_search():
  {'label': 'Critique Of Practical Reason',
   'value': 'Critique Of Practical Reason'},
  {'label': 'Critique Of Pure Reason', 'value': 'Critique Of Pure Reason'},
+ {'label': 'Davis', 'value': 'Davis'},
  {'label': 'Deleuze', 'value': 'Deleuze'},
  {'label': 'Derrida', 'value': 'Derrida'},
  {'label': 'Descartes', 'value': 'Descartes'},
@@ -121,6 +122,7 @@ def get_dropdown_list_search():
   'value': 'Vindication Of The Rights Of Woman'},
  {'label': 'Wittgenstein', 'value': 'Wittgenstein'},
  {'label': 'Wollstonecraft', 'value': 'Wollstonecraft'},
+ {'label': 'Women, Race, And Class', 'value': 'Women, Race, And Class'},
  {'label': 'Writing And Difference', 'value': 'Writing And Difference'}]
     return dropdown_list
 
@@ -160,6 +162,7 @@ def get_classifier_dict():
  'Nietzsche': 'SCHOOL',
  'Wollstonecraft': 'AUTHOR',
  'Beauvoir': 'AUTHOR',
+ 'Davis': 'AUTHOR',
  'Plato - Complete Works': 'TITLE',
  'Aristotle - Complete Works': 'TITLE',
  'Second Treatise On Government': 'TITLE',
@@ -218,6 +221,7 @@ def get_classifier_dict():
  'Thus Spake Zarathustra': 'TITLE',
  'Vindication Of The Rights Of Woman': 'TITLE',
  'The Second Sex': 'TITLE',
+ 'Women, Race, And Class': 'TITLE',
  'Empiricism': 'SCHOOL',
  'Rationalism': 'SCHOOL',
  'Analytic': 'SCHOOL',
