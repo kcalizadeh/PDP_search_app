@@ -10,6 +10,7 @@ def get_dropdown_list_search():
  {'label': 'Aristotle', 'value': 'Aristotle'},
  {'label': 'Aristotle - Complete Works',
   'value': 'Aristotle - Complete Works'},
+ {'label': 'Augustine', 'value': 'Augustine'},
  {'label': 'Beauvoir', 'value': 'Beauvoir'},
  {'label': 'Being And Time', 'value': 'Being And Time'},
  {'label': 'Berkeley', 'value': 'Berkeley'},
@@ -17,6 +18,8 @@ def get_dropdown_list_search():
  {'label': 'Capital', 'value': 'Capital'},
  {'label': 'Capitalism', 'value': 'Capitalism'},
  {'label': 'Communism', 'value': 'Communism'},
+ {'label': 'Confessions Of St. Augustine',
+  'value': 'Confessions Of St. Augustine'},
  {'label': 'Continental', 'value': 'Continental'},
  {'label': 'Critique Of Judgement', 'value': 'Critique Of Judgement'},
  {'label': 'Critique Of Practical Reason',
@@ -86,6 +89,7 @@ def get_dropdown_list_search():
  {'label': 'Rationalism', 'value': 'Rationalism'},
  {'label': 'Ricardo', 'value': 'Ricardo'},
  {'label': 'Russell', 'value': 'Russell'},
+ {'label': 'Scholasticism', 'value': 'Scholasticism'},
  {'label': 'Science Of Logic', 'value': 'Science Of Logic'},
  {'label': 'Second Treatise On Government',
   'value': 'Second Treatise On Government'},
@@ -163,6 +167,7 @@ def get_classifier_dict():
  'Wollstonecraft': 'AUTHOR',
  'Beauvoir': 'AUTHOR',
  'Davis': 'AUTHOR',
+ 'Augustine': 'AUTHOR',
  'Plato - Complete Works': 'TITLE',
  'Aristotle - Complete Works': 'TITLE',
  'Second Treatise On Government': 'TITLE',
@@ -222,6 +227,7 @@ def get_classifier_dict():
  'Vindication Of The Rights Of Woman': 'TITLE',
  'The Second Sex': 'TITLE',
  'Women, Race, And Class': 'TITLE',
+ 'Confessions Of St. Augustine': 'TITLE',
  'Empiricism': 'SCHOOL',
  'Rationalism': 'SCHOOL',
  'Analytic': 'SCHOOL',
@@ -231,5 +237,6 @@ def get_classifier_dict():
  'Communism': 'SCHOOL',
  'Capitalism': 'SCHOOL',
  'Stoicism': 'SCHOOL',
- 'Feminism': 'SCHOOL'}
+ 'Feminism': 'SCHOOL',
+ 'Scholasticism': 'SCHOOL'}
   return classifier_dict
