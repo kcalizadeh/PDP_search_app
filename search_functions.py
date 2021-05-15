@@ -14,6 +14,7 @@ def get_dropdown_list_search():
  {'label': 'Augustine', 'value': 'Augustine'},
  {'label': 'Beauvoir', 'value': 'Beauvoir'},
  {'label': 'Being And Time', 'value': 'Being And Time'},
+ {'label': 'Being and Nothingness', 'value': 'Being and Nothingness'},
  {'label': 'Berkeley', 'value': 'Berkeley'},
  {'label': 'Beyond Good And Evil', 'value': 'Beyond Good And Evil'},
  {'label': 'Capital', 'value': 'Capital'},
@@ -44,6 +45,7 @@ def get_dropdown_list_search():
   'value': 'Essay Concerning Human Understanding'},
  {'label': 'Essential Works Of Lenin', 'value': 'Essential Works Of Lenin'},
  {'label': 'Ethics', 'value': 'Ethics'},
+ {'label': 'Existentialism', 'value': 'Existentialism'},
  {'label': 'Fear and Trembling', 'value': 'Fear and Trembling'},
  {'label': 'Feminism', 'value': 'Feminism'},
  {'label': 'Fichte', 'value': 'Fichte'},
@@ -98,6 +100,7 @@ def get_dropdown_list_search():
  {'label': 'Rationalism', 'value': 'Rationalism'},
  {'label': 'Ricardo', 'value': 'Ricardo'},
  {'label': 'Russell', 'value': 'Russell'},
+ {'label': 'Sartre', 'value': 'Sartre'},
  {'label': 'Scholasticism', 'value': 'Scholasticism'},
  {'label': 'Science Of Logic', 'value': 'Science Of Logic'},
  {'label': 'Second Treatise On Government',
@@ -182,6 +185,7 @@ def get_classifier_dict():
  'Seneca': 'AUTHOR',
  'Kierkegaard': 'SCHOOL',
  'Hobbes': 'SCHOOL',
+ 'Sartre': 'AUTHOR',
  'Plato - Complete Works': 'TITLE',
  'Aristotle - Complete Works': 'TITLE',
  'Second Treatise On Government': 'TITLE',
@@ -249,6 +253,7 @@ def get_classifier_dict():
  'On Clemency': 'TITLE',
  'Fear and Trembling': 'TITLE',
  'Leviathan': 'TITLE',
+ 'Being and Nothingness': 'TITLE',
  'Empiricism': 'SCHOOL',
  'Rationalism': 'SCHOOL',
  'Analytic': 'SCHOOL',
@@ -259,5 +264,6 @@ def get_classifier_dict():
  'Capitalism': 'SCHOOL',
  'Stoicism': 'SCHOOL',
  'Feminism': 'SCHOOL',
- 'Scholasticism': 'SCHOOL'}
+ 'Scholasticism': 'SCHOOL',
+ 'Existentialism': 'SCHOOL'}
   return classifier_dict
