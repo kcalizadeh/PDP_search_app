@@ -26,6 +26,7 @@ def get_dropdown_list_search():
  {'label': 'Critique Of Practical Reason',
   'value': 'Critique Of Practical Reason'},
  {'label': 'Critique Of Pure Reason', 'value': 'Critique Of Pure Reason'},
+ {'label': 'Daoism', 'value': 'Daoism'},
  {'label': 'Davis', 'value': 'Davis'},
  {'label': 'De Veritate', 'value': 'De Veritate'},
  {'label': 'Deleuze', 'value': 'Deleuze'},
@@ -112,6 +113,7 @@ def get_dropdown_list_search():
  {'label': 'The Analysis Of Mind', 'value': 'The Analysis Of Mind'},
  {'label': 'The Antichrist', 'value': 'The Antichrist'},
  {'label': 'The Birth Of The Clinic', 'value': 'The Birth Of The Clinic'},
+ {'label': 'The Book of Zhuangzi ', 'value': 'The Book of Zhuangzi '},
  {'label': 'The Communist Manifesto', 'value': 'The Communist Manifesto'},
  {'label': 'The Crisis Of The European Sciences And Phenomenology',
   'value': 'The Crisis Of The European Sciences And Phenomenology'},
@@ -140,7 +142,8 @@ def get_dropdown_list_search():
  {'label': 'Wittgenstein', 'value': 'Wittgenstein'},
  {'label': 'Wollstonecraft', 'value': 'Wollstonecraft'},
  {'label': 'Women, Race, And Class', 'value': 'Women, Race, And Class'},
- {'label': 'Writing And Difference', 'value': 'Writing And Difference'}]
+ {'label': 'Writing And Difference', 'value': 'Writing And Difference'},
+ {'label': 'Zhuangzi', 'value': 'Zhuangzi'}]
     return dropdown_list
 
 def get_classifier_dict():
@@ -186,6 +189,7 @@ def get_classifier_dict():
  'Kierkegaard': 'SCHOOL',
  'Hobbes': 'SCHOOL',
  'Sartre': 'AUTHOR',
+ 'Zhuangzi': 'AUTHOR',
  'Plato - Complete Works': 'TITLE',
  'Aristotle - Complete Works': 'TITLE',
  'Second Treatise On Government': 'TITLE',
@@ -254,6 +258,7 @@ def get_classifier_dict():
  'Fear and Trembling': 'TITLE',
  'Leviathan': 'TITLE',
  'Being and Nothingness': 'TITLE',
+ 'The Book of Zhuangzi ': 'TITLE',
  'Empiricism': 'SCHOOL',
  'Rationalism': 'SCHOOL',
  'Analytic': 'SCHOOL',
@@ -265,5 +270,6 @@ def get_classifier_dict():
  'Stoicism': 'SCHOOL',
  'Feminism': 'SCHOOL',
  'Scholasticism': 'SCHOOL',
- 'Existentialism': 'SCHOOL'}
+ 'Existentialism': 'SCHOOL',
+ 'Daoism': 'SCHOOL'}
   return classifier_dict
